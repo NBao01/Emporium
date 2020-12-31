@@ -1,0 +1,70 @@
+<%= form_with(model: book, local: true) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <!--<div class="field">
+    <%= form.label :publisher_id %>
+    <%= form.text_field :publisher_id %>
+  </div>-->
+
+  <!--<div class="field">
+    <%= form.label :authors %>
+    <%= form.collection_select(:author_ids, Author.all, :id, :name,
+    {:selected => @book.author_ids}, {:multiple => true}) %>
+  </div>-->
+
+  <div class="field">
+  <%= form.label :authors %>
+  <%= form.collection_check_boxes :author_ids, Author.all, :id, :name do |b| %>
+    <%= b.label(class:"label-checkbox") { b.check_box + b.text } %>
+  <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :publisher %>
+    <%= form.collection_select(:publisher_id, Publisher.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :published_at %>
+    <%= form.datetime_select :published_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :isbn %>
+    <%= form.text_field :isbn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :blurb %>
+    <%= form.text_area :blurb %>
+  </div>
+
+  <div class="field">
+    <%= form.label :page_count %>
+    <%= form.number_field :page_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

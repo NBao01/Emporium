@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  publisher: one
+  published_at: 2020-12-30 21:13:37
+  isbn: MyString
+  blurb: MyText
+  page_count: 1
+  price: 1.5
+
+two:
+  title: MyString
+  publisher: two
+  published_at: 2020-12-30 21:13:37
+  isbn: MyString
+  blurb: MyText
+  page_count: 1
+  price: 1.5

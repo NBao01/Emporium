@@ -3,5 +3,6 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+    @page_title = 'About Emporium'
   end
 end
