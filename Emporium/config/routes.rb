@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'catalog/index'
+  get 'catalog/show'
+  get 'catalog/search'
+  get 'catalog/latest'
   resources :books
   resources :publishers
   resources :authors

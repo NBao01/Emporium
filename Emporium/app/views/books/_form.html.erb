@@ -21,18 +21,18 @@
     <%= form.text_field :publisher_id %>
   </div>-->
 
-  <!--<div class="field">
+  <div class="field">
     <%= form.label :authors %>
     <%= form.collection_select(:author_ids, Author.all, :id, :name,
     {:selected => @book.author_ids}, {:multiple => true}) %>
-  </div>-->
+  </div>
 
-  <div class="field">
+  <!--<div class="field">
   <%= form.label :authors %>
   <%= form.collection_check_boxes :author_ids, Author.all, :id, :name do |b| %>
     <%= b.label(class:"label-checkbox") { b.check_box + b.text } %>
   <% end %>
-  </div>
+  </div>-->
 
   <div class="field">
     <%= form.label :publisher %>

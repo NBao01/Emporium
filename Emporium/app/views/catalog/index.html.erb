@@ -1,0 +1,7 @@
+<!--<p><%= link_to "Search", :action => "search" %></p>-->
+
+<p><%= render :partial => "search_box" %></p>
+
+<%= render :partial => "books" %>
+
+<%= will_paginate @books %>

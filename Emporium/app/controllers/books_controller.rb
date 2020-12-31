@@ -25,9 +25,9 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
-    for author_id in params[:authors_ids]
-      @book.authors << Author.find(author_id)
-    end
+    #for author_id in params[:authors_ids]
+    #  @book.authors << Author.find(author_id)
+    #end
 
     respond_to do |format|
       if @book.save
@@ -72,6 +72,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :publisher_id, :published_at, :isbn, :blurb, :page_count, :price)
+      params.require(:book).permit(:title, {:author_ids => []}, :publisher_id, :published_at, :isbn, :blurb, :page_count, :price)
     end
 end

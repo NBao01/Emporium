@@ -10,4 +10,15 @@ class Book < ApplicationRecord
   validates_numericality_of :price
   validates_format_of :isbn, :with => /[0-9\-xX]{13}/
   validates_uniqueness_of :isbn
+
+  def author_names
+    self.authors.map do |a|
+      a.name
+    end.join(", ") rescue ""
+  end
+
+  def self.latest
+    # order("books.id desc").all
+    order("books.id desc").reverse_order.limit(10).reverse
+  end
 end

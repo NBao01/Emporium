@@ -1,0 +1,7 @@
+<% for book in @books %>
+  <dt><%= link_to book.title, :action => "show", :id => book %></dt>
+    <dd><%= book.authors.map(&:name).join(", ") %></dd>
+    <dd><%= pluralize(book.page_count, "page") %></dd>
+    <dd>Price: ￥<%= sprintf("%.2f", book.price) %></dd>
+    <dd><small>Publisher: <%= book.publisher.name %></small></dd>
+<% end %>
