@@ -3,5 +3,11 @@
     <dd><%= book.authors.map(&:name).join(", ") %></dd>
     <dd><%= pluralize(book.page_count, "page") %></dd>
     <dd>Price: ￥<%= sprintf("%.2f", book.price) %></dd>
+    <dd>
+      <strong>
+        <%= add_book_link("+", book) %>
+        <%#= link_to "+", :controller => "cart", :action => "add", :id => book %>
+      </strong>
+    </dd>
     <dd><small>Publisher: <%= book.publisher.name %></small></dd>
 <% end %>

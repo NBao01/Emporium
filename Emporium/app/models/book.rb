@@ -1,6 +1,8 @@
 class Book < ApplicationRecord
   has_and_belongs_to_many :authors
   belongs_to :publisher
+  has_many :cart_items
+  has_many :carts, :through => :cart_items
 
   validates_length_of :title, :in => 1..255
   validates_presence_of :publisher

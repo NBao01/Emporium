@@ -31,6 +31,12 @@
     <%= yield %>
   </div>
 
+  <% if @cart %>
+    <div id="shopping_cart">
+      <%= render :partial => "cart/cart" %>
+    </div>
+  <% end %>
+
   <div id="footer">
     &copy; 1995-2020 Emporium
   </div>

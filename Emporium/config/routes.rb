@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   get 'catalog/show'
   get 'catalog/search'
   get 'catalog/latest'
+  get 'cart/add'
+  post 'cart/add'
+  get 'cart/remove'
+  post 'cart/remove'
+  get 'cart/clear'
+  post 'cart/clear'
   resources :books
   resources :publishers
   resources :authors

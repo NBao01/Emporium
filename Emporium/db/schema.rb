@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_30_131615) do
+ActiveRecord::Schema.define(version: 2020_12_31_115218) do
 
   create_table "authors", force: :cascade do |t|
     t.string "first_name"
@@ -37,6 +37,22 @@ ActiveRecord::Schema.define(version: 2020_12_30_131615) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "book_id"
+    t.integer "cart_id"
+    t.float "price"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_cart_items_on_book_id"
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "publishers", force: :cascade do |t|
