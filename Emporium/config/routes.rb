@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   post 'cart/remove'
   get 'cart/clear'
   post 'cart/clear'
-  resources :books
+  resources :books do
+    resources :comments
+  end
   resources :publishers
   resources :authors
   get 'home', to: 'static_pages#home'

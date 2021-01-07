@@ -38,5 +38,12 @@
   <%= @book.price %>
 </p>
 
+<h2>Comments</h2>
+<div id="comments">
+<%= render :partial => @book.comments %>
+</div>
+
+<h3> You can add comments from catalog page. </h3><br>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
