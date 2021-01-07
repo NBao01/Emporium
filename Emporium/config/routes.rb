@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :users do
+    collection do
+      get 'login'
+      post 'do_login'
+      get 'logout'
+    end
+  end
   root 'static_pages#home'
   get 'catalog/index'
   get 'catalog/show'

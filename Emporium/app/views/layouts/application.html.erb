@@ -16,6 +16,15 @@
     <h2 id="slogan">Books on Rails</h2>
   </div>
 
+  <p id="loginlogout">
+    <% if current_user %>
+      Hello, <%= current_user.username %>! <br>
+      <%= link_to "Log out", logout_users_path%>
+    <% else %>
+      <%= link_to "Log in", login_users_path%> <br>
+      <%= link_to "Sign up", new_user_path%>
+    <% end %>
+
   <div id="menu">
   <ul>
     <li><a href="/">Home</a>&nbsp;|&nbsp;</li>
@@ -26,6 +35,8 @@
     <li><a href="/about">About</a>&nbsp;</li>
   </ul>
   </div>
+
+  <p id="notice"><%= notice %></p>
 
   <div id="content">
     <h1><%= "#{@page_title}" if @page_title %></h1>
