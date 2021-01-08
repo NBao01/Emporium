@@ -1,24 +1,30 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit, :update, :destroy]
+  before_action :initialize_cart
 
   # GET /authors
   # GET /authors.json
   def index
+    @page_title = "Authors"
     @authors = Author.all
   end
 
   # GET /authors/1
   # GET /authors/1.json
   def show
+    @page_title = @author.name
+    @books = @author.books
   end
 
   # GET /authors/new
   def new
+    @page_title = "New Author"
     @author = Author.new
   end
 
   # GET /authors/1/edit
   def edit
+    @page_title = "Editing Author"
   end
 
   # POST /authors

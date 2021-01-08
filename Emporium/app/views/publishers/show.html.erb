@@ -1,7 +1,6 @@
-<p>
-  <strong>Name:</strong>
-  <%= @publisher.name %>
-</p>
+<%= render :partial => "catalog/books" %>
 
+<% if admin? %>
 <%= link_to 'Edit', edit_publisher_path(@publisher) %> |
+<% end %>
 <%= link_to 'Back', publishers_path %>

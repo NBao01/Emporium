@@ -1,24 +1,29 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :initialize_cart
 
   # GET /books
   # GET /books.json
   def index
+    @page_title = "Books"
     @books = Book.all
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
+    @page_title = @book.title
   end
 
   # GET /books/new
   def new
+    @page_title = "New Book"
     @book = Book.new
   end
 
   # GET /books/1/edit
   def edit
+    @page_title = "Editing Book"
   end
 
   # POST /books

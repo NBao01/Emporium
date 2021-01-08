@@ -15,5 +15,7 @@
   <%= @comment.content %>
 </p>
 
+<% if admin? %>
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
+<% end %>
 <%= link_to 'Back', comments_path %>

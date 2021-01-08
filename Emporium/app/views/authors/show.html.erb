@@ -1,12 +1,6 @@
-<p>
-  <strong>First name:</strong>
-  <%= @author.first_name %>
-</p>
+<%= render :partial => "catalog/books" %>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @author.last_name %>
-</p>
-
+<% if admin? %>
 <%= link_to 'Edit', edit_author_path(@author) %> |
+<% end %>
 <%= link_to 'Back', authors_path %>

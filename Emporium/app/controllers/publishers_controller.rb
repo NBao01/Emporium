@@ -1,24 +1,30 @@
 class PublishersController < ApplicationController
   before_action :set_publisher, only: [:show, :edit, :update, :destroy]
+  before_action :initialize_cart
 
   # GET /publishers
   # GET /publishers.json
   def index
+    @page_title = "Publishers"
     @publishers = Publisher.all
   end
 
   # GET /publishers/1
   # GET /publishers/1.json
   def show
+    @page_title = @publisher.name
+    @books = @publisher.books
   end
 
   # GET /publishers/new
   def new
+    @page_title = "New Publisher"
     @publisher = Publisher.new
   end
 
   # GET /publishers/1/edit
   def edit
+    @page_title = "Editing Publisher"
   end
 
   # POST /publishers
