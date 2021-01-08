@@ -32,6 +32,7 @@
     <li><a href="/publishers">Publishers</a>&nbsp;|&nbsp;</li>
     <li><a href="/books">Books</a>&nbsp;|&nbsp;</li>
     <li><a href="/catalog/index">Catalog</a>&nbsp;|&nbsp;</li>
+    <li><a href="/favorites">Favorites</a>&nbsp;|&nbsp;</li>
     <li><a href="/about">About</a></li>
     <% if admin? %>
       <li>&nbsp;|&nbsp;<a href="/users">Users</a></li>
@@ -44,6 +45,7 @@
 
   <div id="content">
     <h1><%= "#{@page_title}" if @page_title %></h1>
+    <h2><%= alert %></h2>
     <%= yield %>
   </div>
 
@@ -54,7 +56,7 @@
   <% end %>
 
   <div id="footer">
-    &copy; 1995-2020 Emporium
+    &copy; 1995-2021 Emporium
   </div>
   </body>
 </html>

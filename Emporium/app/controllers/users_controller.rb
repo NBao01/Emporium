@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin, only: [:index, :show, :edit, :update, :destroy]
 
   def login
+    @page_title = "Login"
   end
 
   def do_login

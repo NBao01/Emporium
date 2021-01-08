@@ -1,5 +1,6 @@
 class CatalogController < ApplicationController
   before_action :initialize_cart
+  
   def index
     @page_title = "Book List"
     @books = Book.paginate(page: params[:page], per_page: 10)

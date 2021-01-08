@@ -9,6 +9,14 @@ class ApplicationController < ActionController::Base
     current_user && current_user.username == "admin"
   end
 
+  def authenticate
+    redirect_to login_users_url, alert: 'Please login to continue.' unless current_user
+  end
+
+  def authenticate_admin
+    redirect_back fallback_location: home_path, alert: 'Administrator Authority Needed!' unless admin?
+  end
+
   private
 
   def initialize_cart

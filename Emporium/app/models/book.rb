@@ -4,6 +4,7 @@ class Book < ApplicationRecord
   has_many :cart_items
   has_many :carts, :through => :cart_items
   has_many :comments
+  has_and_belongs_to_many :users
 
   validates_length_of :title, :in => 1..255
   validates_presence_of :publisher

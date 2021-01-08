@@ -1,6 +1,7 @@
 class PublishersController < ApplicationController
   before_action :set_publisher, only: [:show, :edit, :update, :destroy]
   before_action :initialize_cart
+  before_action :authenticate_admin, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /publishers
   # GET /publishers.json

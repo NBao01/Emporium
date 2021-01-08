@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'favorites', to: 'static_pages#favorites'
   get 'order/index'
   get 'order/show'
   post 'order/show'
@@ -20,12 +21,14 @@ Rails.application.routes.draw do
   get 'catalog/latest'
   get 'cart/add'
   post 'cart/add'
-  get 'cart/remove'
   post 'cart/remove'
-  get 'cart/clear'
   post 'cart/clear'
   resources :books do
     resources :comments
+    member do
+      post 'like'
+      post 'unlike'
+    end
   end
   resources :publishers
   resources :authors

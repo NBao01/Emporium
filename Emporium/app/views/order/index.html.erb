@@ -15,8 +15,8 @@
     <td align="right"><%= order.status %></td> 
     <td align="right"><%= order.total %></td> 
     <td align="right"><%= order.books.size %></td> 
-    <td align="right"><%= order.created_at.strftime("%Y-%m-%d %I:%M") %></td> 
-    <td align="right"><%= order.updated_at.strftime("%Y-%m-%d %I:%M") %></td> 
+    <td align="right"><%= order.created_at.strftime("%Y-%m-%d %H:%M") %></td> 
+    <td align="right"><%= order.updated_at.strftime("%Y-%m-%d %H:%M") %></td> 
     <td><%= button_to "View", :action => 'show', :id => order %></td> 
   </tr> 
 <% end %> 

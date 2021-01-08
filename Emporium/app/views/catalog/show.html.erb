@@ -10,7 +10,14 @@
   <dd><%= @book.blurb %></dd>
 </dl>
 
-<%= add_book_link("Add to Cart", @book) %>
+<strong>
+<%= add_book_link("Add to Cart", @book) %> &nbsp;|&nbsp;
+<% if !@book.users.include?(current_user) %>
+<%= link_to "Like", like_book_path(@book), method: :post %>
+<% else %>
+<%= link_to "UnLike", unlike_book_path(@book), method: :post %>
+<% end %>
+</strong>
 
 <h2>Comments</h2>
 <div id="comments">
@@ -26,7 +33,7 @@
     <p><%= f.submit "Add Comment" %></p>
   <% end %>
 <% else %>
-  Please log in to add comments.
+  <h3>Please log in to add comments.</h3>
 <% end %>
 
 

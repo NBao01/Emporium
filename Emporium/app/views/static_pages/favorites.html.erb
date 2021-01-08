@@ -1,0 +1,5 @@
+<% if !current_user %>
+  <h2>Please Log in to view the favorites list.</h2>
+<% else %>
+  <%= render :partial => "catalog/books" %>
+<% end %>

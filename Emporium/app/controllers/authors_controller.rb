@@ -1,6 +1,7 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit, :update, :destroy]
   before_action :initialize_cart
+  before_action :authenticate_admin, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /authors
   # GET /authors.json

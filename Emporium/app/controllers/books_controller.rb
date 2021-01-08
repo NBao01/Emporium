@@ -1,6 +1,24 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy, :like, :unlike]
   before_action :initialize_cart
+  before_action :authenticate, only: [:like, :unlike]
+  before_action :authenticate_admin, only: [:new, :create, :edit, :update, :destroy]
+
+  def like
+    @book.users << current_user
+    respond_to do |format|
+      format.html { redirect_back fallback_location: catalog_index_path, notice: @book.title + ' is added to your favorites' }
+      format.json { head :no_content }
+    end
+  end
+
+  def unlike
+    @book.users.delete(current_user)
+    respond_to do |format|
+      format.html { redirect_back fallback_location: catalog_index_path, notice: @book.title + ' is removed from your favorites' }
+      format.json { head :no_content }
+    end
+  end
 
   # GET /books
   # GET /books.json

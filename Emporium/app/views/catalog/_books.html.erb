@@ -3,9 +3,15 @@
     <dd><%= book.authors.map(&:name).join(", ") %></dd>
     <dd><%= pluralize(book.page_count, "page") %></dd>
     <dd>Price: ￥<%= sprintf("%.2f", book.price) %></dd>
+    <dd><%= pluralize(book.users.size, "like", "likes") %></dd>
     <dd>
       <strong>
-        <%= add_book_link("+", book) %>
+        <%= add_book_link("+", book) %> &nbsp;|&nbsp;
+        <% if !book.users.include?(current_user) %>
+          <%= link_to "Like", like_book_path(book), method: :post %>
+        <% else %>
+          <%= link_to "UnLike", unlike_book_path(book), method: :post %>
+        <% end %>
       </strong>
     </dd>
     <dd><small>Publisher: <%= book.publisher.name %></small></dd>

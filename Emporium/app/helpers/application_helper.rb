@@ -4,7 +4,7 @@ module ApplicationHelper
               :action => "add", :id => book}},
               {:title => "Add to Cart",
               :href => url_for( :controller => "cart",
-                        :action => "add", :id => book)}
+                        :action => "add", :id => book), method: :post}
   end
 
   def remove_book_link(text, book)
