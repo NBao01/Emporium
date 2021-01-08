@@ -32,7 +32,11 @@
     <li><a href="/publishers">Publishers</a>&nbsp;|&nbsp;</li>
     <li><a href="/books">Books</a>&nbsp;|&nbsp;</li>
     <li><a href="/catalog/index">Catalog</a>&nbsp;|&nbsp;</li>
-    <li><a href="/about">About</a>&nbsp;</li>
+    <li><a href="/about">About</a></li>
+    <% if admin? %>
+      <li>&nbsp;|&nbsp;<a href="/users">Users</a></li>
+      <li>&nbsp;|&nbsp;<a href="/order/index">Orders</a></li>
+    <% end %>
   </ul>
   </div>
 

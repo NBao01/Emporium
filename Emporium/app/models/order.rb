@@ -28,11 +28,24 @@ class Order < ApplicationRecord
     self.status = "open" if self.status.blank?
   end
 
+  def total 
+    order_items.inject(0) {|sum, n| n.price * n.amount + sum} 
+  end
+
   def process 
     result = true
     # TODO Charge the customer by calling the payment gateway
-    self.status == 'processed'
+    self.status = 'processed'
     save!
     result
+  end
+  
+  def close 
+    self.status = 'closed' 
+    save! 
+  end
+  
+  def closed? 
+    status == 'closed' 
   end
 end

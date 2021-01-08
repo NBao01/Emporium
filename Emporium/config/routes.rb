@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'order/index'
+  get 'order/show'
+  post 'order/show'
+  post 'order/close'
   get 'checkout/index'
   post 'checkout/place_order'
   get 'checkout/thank_you'
