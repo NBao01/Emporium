@@ -3,6 +3,11 @@
 <% end %>
 
 <h3>Your Shopping Cart</h3>
+<p> 
+  <strong> 
+    <%= link_to "Proceed to Checkout", :controller => 'checkout' unless controller.controller_name == 'checkout' %> 
+  </strong> 
+</p>
 <ul>
   <% for item in @cart.cart_items %>
   <li id="cart_item_<%= item.book.id %>">

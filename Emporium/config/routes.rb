@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'checkout/index'
+  post 'checkout/place_order'
+  get 'checkout/thank_you'
   resources :users do
     collection do
       get 'login'
