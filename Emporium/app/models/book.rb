@@ -5,6 +5,7 @@ class Book < ApplicationRecord
   has_many :carts, :through => :cart_items
   has_many :comments
   has_and_belongs_to_many :users
+  belongs_to :category
 
   validates_length_of :title, :in => 1..255
   validates_presence_of :publisher
@@ -23,6 +24,6 @@ class Book < ApplicationRecord
 
   def self.latest
     # order("books.id desc").all
-    order("books.id desc").reverse_order.limit(10).reverse
+    order("books.id desc").limit(10)
   end
 end

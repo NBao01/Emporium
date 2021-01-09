@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_08_115223) do
+ActiveRecord::Schema.define(version: 2021_01_09_150157) do
 
   create_table "authors", force: :cascade do |t|
     t.string "first_name"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2021_01_08_115223) do
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_books_on_category_id"
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
   end
 
@@ -58,6 +60,12 @@ ActiveRecord::Schema.define(version: 2021_01_08_115223) do
   end
 
   create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

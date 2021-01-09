@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   get 'favorites', to: 'static_pages#favorites'
   get 'order/index'
   get 'order/show'

@@ -1,0 +1,6 @@
+<%= render :partial => "catalog/books" %>
+
+<% if admin? %>
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<% end %>
+<%= link_to 'Back', categories_path %>

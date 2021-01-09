@@ -2,6 +2,7 @@
   <dt><%= link_to book.title, catalog_show_path + "?id=" + book.id.to_s %></dt>
     <dd><%= book.authors.map(&:name).join(", ") %></dd>
     <dd><%= pluralize(book.page_count, "page") %></dd>
+    <dd>Category: <%= book.category.name %></dd>
     <dd>Price: ￥<%= sprintf("%.2f", book.price) %></dd>
     <dd><%= pluralize(book.users.size, "like", "likes") %></dd>
     <dd>
