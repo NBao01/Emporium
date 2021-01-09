@@ -11,6 +11,7 @@ class Book < ApplicationRecord
   validates_presence_of :publisher
   validates_presence_of :authors
   validates_presence_of :published_at
+  validates_presence_of :category
   validates_numericality_of :page_count, :only_integer => true
   validates_numericality_of :price
   validates_format_of :isbn, :with => /[0-9\-xX]{13}/
