@@ -7,7 +7,7 @@ class CheckoutController < ApplicationController
     @page_title = "Checkout" 
     if @cart.books.empty? 
       flash[:notice] = "Your shopping cart is empty! Please add something to it before proceeding to checkout." 
-      redirect_to :controller => 'catalog' 
+      redirect_back fallback_location: catalog_index_path
     end 
   end
 
