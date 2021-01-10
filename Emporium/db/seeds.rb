@@ -44,15 +44,35 @@ author_26 = Author.create(first_name: 'Ravi', last_name: 'Serhi')
 author_27 = Author.create(first_name: 'Jeffery D.', last_name: 'Ullman')
 author_28 = Author.create(first_name: 'Kip', last_name: 'Irvine')
 author_29 = Author.create(first_name: 'Bruce', last_name: 'Eckel')
+author_30 = Author.create(first_name: 'Van Draanen', last_name: 'Wendelin')
+author_31 = Author.create(first_name: 'Cixin', last_name: 'Liu')
+author_32 = Author.create(first_name: 'Khaled', last_name: 'Hosseini')
+author_33 = Author.create(first_name: 'Jane', last_name: 'Austen')
+author_34 = Author.create(first_name: 'Walter', last_name: 'Isaacson')
+author_35 = Author.create(first_name: 'Ashlee', last_name: 'Vance')
+author_36 = Author.create(first_name: 'Sir Winston S.', last_name: 'Churchill')
+author_37 = Author.create(first_name: 'Adam', last_name: 'Smith')
+author_38 = Author.create(first_name: 'Spencer', last_name: 'Johnson')
+author_39 = Author.create(first_name: 'John', last_name: 'Carreyrou')
 
 # Publisher Create
 publisher_1 = Publisher.create(name: 'Apress')
 publisher_2 = Publisher.create(name: 'Post & Telecom Press')
 publisher_3 = Publisher.create(name: 'China Machine Press')
 publisher_4 = Publisher.create(name: 'Publishing House of Electronics Industry')
+publisher_5 = Publisher.create(name: 'Pan Macmillan')
+publisher_6 = Publisher.create(name: 'Head of Zeus')
+publisher_7 = Publisher.create(name: 'Penguin Random House US')
+publisher_8 = Publisher.create(name: 'Vintage Classics')
+publisher_9 = Publisher.create(name: 'Simon Schuster')
+publisher_10 = Publisher.create(name: 'HarperCollins US')
+publisher_11 = Publisher.create(name: 'Bantam Books')
 
 # Category Create
 category_1 = Category.create(name: "Computer Science")
+category_2 = Category.create(name: "Literature")
+category_3 = Category.create(name: "Biographies")
+category_4 = Category.create(name: "Management")
 
 # Book Create
 Book.create(title: 'Beginning Ruby on Rails E-Commerce', 
@@ -132,3 +152,73 @@ Book.create(title: 'Thinking in Java',
 						published_at: "2019-5-1 15:53:00", category: category_1, isbn: "9787111213826", 
 						blurb: "Fourth Edition",
 						page_count: 880, price: 108.0)
+
+
+Book.create(title: 'Flipped', 
+						authors: [author_30], publisher: publisher_5, 
+						published_at: "2019-2-1 15:53:00", category: category_2, isbn: "9781529013245", 
+						blurb: "A sweet story",
+            page_count: 212, price: 30)
+            
+
+Book.create(title: 'Three Body - Death\'s end', 
+						authors: [author_31], publisher: publisher_6, 
+						published_at: "2017-5-4 15:53:00", category: category_2, isbn: "9781784971656", 
+						blurb: "A popular Scientific Novel",
+            page_count: 608, price: 69)
+            
+
+Book.create(title: 'The Kite Runner', 
+						authors: [author_32], publisher: publisher_7, 
+						published_at: "2013-3-1 15:53:00", category: category_2, isbn: "9781594632204", 
+						blurb: "A novel that deserves everyone to read",
+            page_count: 416, price: 64)
+
+
+Book.create(title: 'Pride and Prejudice', 
+						authors: [author_33], publisher: publisher_8, 
+						published_at: "2014-6-26 15:53:00", category: category_2, isbn: "9780099589334", 
+						blurb: "The best-loved book by our best-loved novelist",
+            page_count: 387, price: 46)
+            
+
+Book.create(title: 'Steve Jobs: A Biography', 
+						authors: [author_34], publisher: publisher_9, 
+						published_at: "2011-10-24 15:53:00", category: category_3, isbn: "9781451648539", 
+						blurb: "From the author of the bestselling biographies of Benjamin Franklin and Albert Einstein, This is the Exclusive biography of Steve Jobs.",
+            page_count: 630, price: 114)
+
+
+Book.create(title: 'Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future', 
+						authors: [author_35], publisher: publisher_10, 
+						published_at: "2015-5-19 15:53:00", category: category_3, isbn: "9780062301239", 
+						blurb: "Elon Musk is the most daring entrepreneur of our time",
+            page_count: 400, price: 244)
+            
+
+Book.create(title: 'Churchill: The Power of Words', 
+						authors: [author_36], publisher: publisher_11, 
+						published_at: "2014-5-8 15:53:00", category: category_3, isbn: "9780857501462", 
+						blurb: "Winston Churchill understood and wielded the power of words throughout his six decades in the public eye.",
+            page_count: 688, price: 85)
+            
+
+Book.create(title: 'The Wealth of Nations', 
+						authors: [author_37], publisher: publisher_7, 
+						published_at: "1994-1-25 15:53:00", category: category_4, isbn: "9780679424734", 
+						blurb: "Adam Smith's masterpiece, first published in 1776",
+            page_count: 1130, price: 196.90)
+
+
+Book.create(title: 'Who Moved My Cheese?', 
+						authors: [author_38], publisher: publisher_7, 
+						published_at: "1999-3-4 15:53:00", category: category_4, isbn: "9780091816971", 
+						blurb: "An amusing and enlightening story of four characters",
+            page_count: 94, price: 60)
+            
+            
+Book.create(title: 'Bad Blood Secrets and Lies in a Silicon Valley', 
+						authors: [author_39], publisher: publisher_7, 
+						published_at: "2018-5-21 15:53:00", category: category_4, isbn: "9781524711481", 
+						blurb: "A riveting story of the biggest corporate fraud since Enron， a tale of ambition and hubris set amid the bold promises of Silicon Valley.",
+						page_count: 352, price: 125)
